@@ -1,6 +1,6 @@
 # SymbolicMethods_Project
 In this project, we aim to build a research interest summarization tool using LDA. The 'R' packages 'RISMed' and 'textmineR' were used.
-#Process Flow
+Process Flow
 1. Author name is the input and the package 'RISMed' is used to extract the abstracts published by the author on PubMed. 
 2. A Document-Term matrix is constructed with each 'document' being a vector a MeSH terms extracted from a given abstract.
 3.Each vector of MeSH terms (for a given abstract) is fed as a document to the LDA model.
