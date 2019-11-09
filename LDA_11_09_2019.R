@@ -102,7 +102,7 @@ model$summary <- data.frame(topic = rownames(model$phi),
                             }),
                             stringsAsFactors = FALSE)
 model$summary[ order(model$summary$prevalence, decreasing = TRUE) , ][ 1:10 , ]
-
+model$labels[10]
 ##### Trial 2: Using '_' terms
 df_tt=as.data.frame(model$summary$top_terms)
 df_tt
@@ -131,7 +131,17 @@ out=apply(df_topic,1,my_funct )
 ## 'out' is our final LDA output term list. It consists of either '_' topic terms or label_terms based on the which approach we took
 ##above (either Trial:2 or Trial:3)
 out
+## If there are no bi- or tri-grams in the topic terms, then use the topic-label as the term
+for (i in 1:length(out))
+{
+  
+  if (as.character(out[i])=="character(0)")
+  {
+    out[i]=model$labels[i]
+  }
+}
 
+out
 ## 'AllTerms$AllMeshTerms' gives us extracted MeSH terms for all abstrats of a given author
 ## (Like a master dictionary) that we will use to compare our bigrams and trigrams with
 AllTerms$AllMeshTerms
