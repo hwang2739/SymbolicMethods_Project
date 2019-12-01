@@ -9,7 +9,7 @@ library(htmlwidgets)
 library(jpeg)
 library(ggimage)
 
-res <- EUtilsSummary('chunhua weng', type='esearch', db='pubmed')
+res <- EUtilsSummary('lena mamykina', type='esearch', db='pubmed')
 fetch <- EUtilsGet(res)
 mesh <- Mesh(fetch)
 year <- YearPubmed(fetch)
