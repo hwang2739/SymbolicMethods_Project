@@ -2,20 +2,11 @@
 In this project, we aim to build a research interest summarization tool using LDA. The 'R' packages 'RISMed' and 'textmineR' were used.
 
 Process Flow
-1. Author name is the input and the package 'RISMed' is used to extract the abstracts published by the author on PubMed. 
-2. A Document-Term matrix is constructed with each 'document' being a vector a MeSH terms extracted from a given abstract.
-3. Each vector of MeSH terms (for a given abstract) is fed as a document to the LDA model.
-4. Two approaches have been taken to assign topic names:
-    1. By Using the bi- and tri-grams outputted by the LDA model
-    2. By using the pre-generated topic labels 
-5. Fuzzy string match conducted between bi-grams and tri-grams and the long list of all MeSH terms extracted from all abstracts associated with an author to reveal the main topics the research interest corresponds to.
-6. Research interest trend visualization using timeline and wordcloud. 
+1. Abstract Extraction from PubMed for author ('RISMed' package)
+2. MeSH dictionary creation: MeSH term extraction and aggregation from all abstracts
+3. Topic Identification: Unsupervised Topic Modelling with MeSH terms as input (LDA modeling)
+4. Reverse Mapping to MeSH Dictionary (fuzzy string matching, mapping the bigrams and trigrams back to the MeSH dictionary)
 
-# Next steps
-1. Explore the possibility to group the MeSH terms into unigrams, bigrams, and trigrams prior to the LDA step.
-2. Integrating part I and part II together.
-3. Show the evolution of terms over time, instead of wordcloud.
-4. Qualitative evaluations with researchers.
-5. Further discussion on the limitation of LDA.
-
-
+Innovation
+1. Use of MeSH terms for research interests summarization
+2. Labelling of LDA algorithm outputs using standard concepts (MeSH term reverse mapping)
