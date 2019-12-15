@@ -8,7 +8,7 @@
 
 library(RISmed) # Download content from NCBI databases
 library(tm) # text mining package
-res <- EUtilsSummary('lena mamykina', type='esearch', db='pubmed') 
+res <- EUtilsSummary('adler perotte', type='esearch', db='pubmed') 
 # get summary of NCBI EUtils query
 summary(res)
 #QueryId(res) 
